@@ -107,7 +107,6 @@ export class ProductsService {
       await queryRunner.manager.save(product);
       await queryRunner.commitTransaction();
       await queryRunner.release();
-      // await this.productRepository.save(product);
       return this.findOnePlain(id);
     } catch (e) {
       await queryRunner.rollbackTransaction();
